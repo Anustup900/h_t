@@ -699,7 +699,7 @@
   },
   "1894": {
     "inputs": {
-      "seed": 829925478567058
+      "seed": 13539825726833
     },
     "class_type": "Seed",
     "_meta": {
@@ -855,7 +855,7 @@
       "num_beams": 3,
       "do_sample": true,
       "output_mask_select": "",
-      "seed": 910584836628880,
+      "seed": 912952095128202,
       "image": [
         "2002",
         0
@@ -1104,7 +1104,7 @@
     },
     "class_type": "SaveImage",
     "_meta": {
-      "title": "$map:{\"saveImage\": true}"
+      "title": "output_to_save"
     }
   },
   "1934": {
@@ -1306,7 +1306,7 @@
     },
     "class_type": "LoadImage",
     "_meta": {
-      "title": "$map:{\"image\":\"inputImage\"}"
+      "title": "load_image_input"
     }
   },
   "1988": {
