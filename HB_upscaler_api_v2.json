@@ -1,0 +1,1600 @@
+{
+  "13": {
+    "inputs": {
+      "ckpt_name": "dreamshaperXL_lightningDPMSDE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "$map:{\"ckpt_name\":\"sdCheckpoint\"}"
+    }
+  },
+  "26": {
+    "inputs": {
+      "control_net_name": "sai_xl_canny_256lora.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "$map:{\"control_net_name\":\"cannyControlNet.model\"}"
+    }
+  },
+  "218": {
+    "inputs": {
+      "model": "CIDAS/clipseg-rd64-refined"
+    },
+    "class_type": "CLIPSeg Model Loader",
+    "_meta": {
+      "title": "CLIPSeg Model Loader"
+    }
+  },
+  "252": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinB (938MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "254": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "Prefer GPU"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "272": {
+    "inputs": {
+      "control_net_name": "diffusers_xl_depth_full.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "$map:{\"control_net_name\":\"depthControlNet.model\"}"
+    }
+  },
+  "285": {
+    "inputs": {
+      "model_name": "codeformer.pth"
+    },
+    "class_type": "FaceRestoreModelLoader",
+    "_meta": {
+      "title": "FaceRestoreModelLoader"
+    }
+  },
+  "296": {
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_softedge_fp16.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load Softedge Model"
+    }
+  },
+  "364": {
+    "inputs": {
+      "model_name": "4x-UltraSharp.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "$map:{\"model_name\": \"upscalerModel\"}"
+    }
+  },
+  "454": {
+    "inputs": {
+      "switch": "Off",
+      "lora_name": "white_1_0.safetensors",
+      "strength_model": [
+        "2007",
+        0
+      ],
+      "strength_clip": [
+        "2008",
+        0
+      ],
+      "model": [
+        "13",
+        0
+      ],
+      "clip": [
+        "13",
+        1
+      ]
+    },
+    "class_type": "CR Load LoRA",
+    "_meta": {
+      "title": "$map:{\"lora_name\":\"customLora.id\",\"switch\": \"customLora.enabled\"}"
+    }
+  },
+  "1075": {
+    "inputs": {
+      "category_filter": "All",
+      "lora_name": "sd_xl_offset_example-lora_1.0.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "inverse": false,
+      "seed": 0,
+      "A": 2,
+      "B": 2,
+      "preset": "Preset",
+      "block_vector": "0,0,0,0,0,0,B,B,B,0,0,0",
+      "bypass": false
+    },
+    "class_type": "LoraLoaderBlockWeight //Inspire",
+    "_meta": {
+      "title": "$map:{\"lora_name\":\"productLora.id\", \"block_vector\": \"productLora.blocks\"}"
+    }
+  },
+  "1159": {
+    "inputs": {
+      "text": "Checkpoint loaded:"
+    },
+    "class_type": "ProfileNode",
+    "_meta": {
+      "title": "ProfileNode"
+    }
+  },
+  "1221": {
+    "inputs": {
+      "ckpt_name": "realisticVisionV60B1_v51VAE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Refiner Checkpoint"
+    }
+  },
+  "1222": {
+    "inputs": {
+      "lora_name": "detail_tweaker_1_5.safetensors",
+      "strength_model": 0.2,
+      "strength_clip": 0.2,
+      "model": [
+        "1221",
+        0
+      ],
+      "clip": [
+        "1221",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "1230": {
+    "inputs": {
+      "control_net_name": "control_v11f1e_sd15_tile.pth"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "1450": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter-plus_sdxl_vit-h.bin"
+    },
+    "class_type": "IPAdapterModelLoader",
+    "_meta": {
+      "title": "IPAdapter Model Loader"
+    }
+  },
+  "1454": {
+    "inputs": {
+      "clip_name": "ViT-H.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "1620": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter-faceid-plusv2_sdxl.bin"
+    },
+    "class_type": "IPAdapterModelLoader",
+    "_meta": {
+      "title": "IPAdapter Model Loader"
+    }
+  },
+  "1621": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter-plus-face_sdxl_vit-h.bin"
+    },
+    "class_type": "IPAdapterModelLoader",
+    "_meta": {
+      "title": "IPAdapter Model Loader"
+    }
+  },
+  "1622": {
+    "inputs": {
+      "lora_name": "ip-adapter-faceid-plusv2_sdxl_lora.safetensors",
+      "strength_model": 0.65
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "1661": {
+    "inputs": {
+      "provider": "CPU",
+      "model_name": "buffalo_l"
+    },
+    "class_type": "IPAdapterInsightFaceLoader",
+    "_meta": {
+      "title": "IPAdapter InsightFace Loader"
+    }
+  },
+  "1704": {
+    "inputs": {
+      "ctx_01": [
+        "1988",
+        0
+      ],
+      "ctx_02": [
+        "1989",
+        0
+      ]
+    },
+    "class_type": "Context Switch (rgthree)",
+    "_meta": {
+      "title": "$reconnect:{\"evaluate\":\"facedetailer.enabled\", \"options\":{\"true\": \"ctx_01\", \"false\": \"ctx_02\"}}"
+    }
+  },
+  "1722": {
+    "inputs": {
+      "fov": 60,
+      "iterations": 5,
+      "resolution": 1024
+    },
+    "class_type": "DSINE-NormalMapPreprocessor",
+    "_meta": {
+      "title": "DSINE Normal Map"
+    }
+  },
+  "1740": {
+    "inputs": {
+      "model_name": "big-lama.pt"
+    },
+    "class_type": "INPAINT_LoadInpaintModel",
+    "_meta": {
+      "title": "Load Inpaint Model"
+    }
+  },
+  "1745": {
+    "inputs": {
+      "method": "VITMatte",
+      "mask_grow": 0,
+      "fix_gap": 0,
+      "fix_threshold": 0.75,
+      "edge_erode": 6,
+      "edte_dilate": 6,
+      "black_point": 0.01,
+      "white_point": 0.99,
+      "device": "cuda",
+      "max_megapixels": 2
+    },
+    "class_type": "LayerMask: MaskEdgeUltraDetail V2",
+    "_meta": {
+      "title": "LayerMask: MaskEdgeUltraDetail V2"
+    }
+  },
+  "1746": {
+    "inputs": {
+      "model_name": "sam_vit_h (2.56GB)"
+    },
+    "class_type": "SAMModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAMModelLoader (segment anything)"
+    }
+  },
+  "1822": {
+    "inputs": {
+      "model_name": "codeformer.pth"
+    },
+    "class_type": "FaceRestoreModelLoader",
+    "_meta": {
+      "title": "FaceRestoreModelLoader"
+    }
+  },
+  "1823": {
+    "inputs": {
+      "unet_name": "jibMixFlux_v61RealPixFixed.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "$map:{\"unet_name\": \"sdCheckpoint\"}"
+    }
+  },
+  "1827": {
+    "inputs": {
+      "lora_name": "sd_xl_offset_example-lora_1.0.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "1840",
+        0
+      ],
+      "clip": [
+        "1851",
+        0
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "$map:{\"lora_name\":\"productLora.id\", \"strength_model\": \"productLora.loraStrength\", \"strength_clip\": \"productLora.loraStrength\"}"
+    }
+  },
+  "1828": {
+    "inputs": {
+      "img_in.": 1,
+      "time_in.": 1,
+      "guidance_in": 1,
+      "vector_in.": 1,
+      "txt_in.": 1,
+      "double_blocks.0.": 1,
+      "double_blocks.1.": 1,
+      "double_blocks.2.": 1,
+      "double_blocks.3.": 1,
+      "double_blocks.4.": 1,
+      "double_blocks.5.": 1,
+      "double_blocks.6.": 1,
+      "double_blocks.7.": 1,
+      "double_blocks.8.": 1,
+      "double_blocks.9.": 1,
+      "double_blocks.10.": 1,
+      "double_blocks.11.": 1,
+      "double_blocks.12.": 1,
+      "double_blocks.13.": 1,
+      "double_blocks.14.": 1,
+      "double_blocks.15.": 1,
+      "double_blocks.16.": 1,
+      "double_blocks.17.": 1,
+      "double_blocks.18.": 1,
+      "single_blocks.0.": 1,
+      "single_blocks.1.": 1,
+      "single_blocks.2.": 1,
+      "single_blocks.3.": 1,
+      "single_blocks.4.": 1,
+      "single_blocks.5.": 1,
+      "single_blocks.6.": 1,
+      "single_blocks.7.": 1,
+      "single_blocks.8.": 1,
+      "single_blocks.9.": 1,
+      "single_blocks.10.": 1,
+      "single_blocks.11.": 1,
+      "single_blocks.12.": 1,
+      "single_blocks.13.": 1,
+      "single_blocks.14.": 1,
+      "single_blocks.15.": 1,
+      "single_blocks.16.": 1,
+      "single_blocks.17.": 1,
+      "single_blocks.18.": 1,
+      "single_blocks.19.": 0,
+      "single_blocks.20.": 0,
+      "single_blocks.21.": 0,
+      "single_blocks.22.": 0,
+      "single_blocks.23.": 0,
+      "single_blocks.24.": 0,
+      "single_blocks.25.": 0,
+      "single_blocks.26.": 0,
+      "single_blocks.27.": 0,
+      "single_blocks.28.": 0,
+      "single_blocks.29.": 0,
+      "single_blocks.30.": 0,
+      "single_blocks.31.": 0,
+      "single_blocks.32.": 0,
+      "single_blocks.33.": 0,
+      "single_blocks.34.": 0,
+      "single_blocks.35.": 0,
+      "single_blocks.36.": 0,
+      "single_blocks.37.": 0,
+      "final_layer.": 1,
+      "model1": [
+        "1827",
+        0
+      ],
+      "model2": [
+        "1840",
+        0
+      ]
+    },
+    "class_type": "ModelMergeFlux1",
+    "_meta": {
+      "title": "ModelMergeFlux1"
+    }
+  },
+  "1829": {
+    "inputs": {
+      "switch": "On",
+      "lora_name": "fluxRealSkin-V2.safetensors",
+      "strength_model": 0.4,
+      "strength_clip": 0.4,
+      "model": [
+        "1828",
+        0
+      ],
+      "clip": [
+        "1827",
+        1
+      ]
+    },
+    "class_type": "CR Load LoRA",
+    "_meta": {
+      "title": "Face Custom Lora"
+    }
+  },
+  "1840": {
+    "inputs": {
+      "max_shift": 1.15,
+      "base_shift": 0.5,
+      "width": [
+        "1874",
+        2
+      ],
+      "height": [
+        "1875",
+        2
+      ],
+      "model": [
+        "1823",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingFlux",
+    "_meta": {
+      "title": "ModelSamplingFlux"
+    }
+  },
+  "1842": {
+    "inputs": {
+      "strength": 1,
+      "model": [
+        "1858",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "Differential Diffusion"
+    }
+  },
+  "1845": {
+    "inputs": {
+      "clip_name": "sigclip_vision_patch14_384.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "1847": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "1851": {
+    "inputs": {
+      "clip_name1": "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors",
+      "clip_name2": "t5xxl_fp8_e4m3fn.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "1852": {
+    "inputs": {
+      "unet_name": "flux1-dev.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "$map:{\"unet_name\": \"sdCheckpoint\"}"
+    }
+  },
+  "1853": {
+    "inputs": {
+      "style_model_name": "redux.safetensors"
+    },
+    "class_type": "StyleModelLoader",
+    "_meta": {
+      "title": "Load Style Model"
+    }
+  },
+  "1854": {
+    "inputs": {
+      "model": "CIDAS/clipseg-rd64-refined"
+    },
+    "class_type": "CLIPSeg Model Loader",
+    "_meta": {
+      "title": "CLIPSeg Model Loader"
+    }
+  },
+  "1856": {
+    "inputs": {
+      "model_name": "sam_vit_h_4b8939.pth",
+      "device_mode": "AUTO"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "1858": {
+    "inputs": {
+      "unet_name": "flux1-fill-dev-fp8.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "1873": {
+    "inputs": {
+      "number_type": "integer",
+      "number": 15
+    },
+    "class_type": "Constant Number",
+    "_meta": {
+      "title": "$map:{\"number\":\"sampler.steps\"}"
+    }
+  },
+  "1874": {
+    "inputs": {
+      "number_type": "integer",
+      "number": 1122
+    },
+    "class_type": "Constant Number",
+    "_meta": {
+      "title": "$map:{\"number\":\"width\"}"
+    }
+  },
+  "1875": {
+    "inputs": {
+      "number_type": "integer",
+      "number": 1536
+    },
+    "class_type": "Constant Number",
+    "_meta": {
+      "title": "$map:{\"number\":\"height\"}"
+    }
+  },
+  "1881": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "$map:{\"text\":\"negativePrompt\"}"
+    }
+  },
+  "1882": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "$map:{\"text\":\"concatPrompt1\"}"
+    }
+  },
+  "1883": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "$map:{\"text\":\"positivePrompt\"}"
+    }
+  },
+  "1884": {
+    "inputs": {
+      "seed": 4175388395
+    },
+    "class_type": "Seed",
+    "_meta": {
+      "title": "$map:{\"seed\":\"seed\"}"
+    }
+  },
+  "1885": {
+    "inputs": {
+      "sensitivity": 0.5,
+      "images": [
+        "1928",
+        0
+      ]
+    },
+    "class_type": "Safety Checker",
+    "_meta": {
+      "title": "$map:{\"sensitivity\": \"safety_check_sensitivity\"}"
+    }
+  },
+  "1886": {
+    "inputs": {
+      "Input": [
+        "1891",
+        0
+      ],
+      "image1": [
+        "1887",
+        0
+      ],
+      "image2": [
+        "1928",
+        0
+      ]
+    },
+    "class_type": "CR Image Input Switch",
+    "_meta": {
+      "title": "🔀 CR Image Input Switch"
+    }
+  },
+  "1887": {
+    "inputs": {
+      "text": "NSFW Image",
+      "font_name": "PixelifySans-Bold.ttf",
+      "font_size": 50,
+      "font_color": "custom",
+      "align": "center",
+      "justify": "center",
+      "margins": 0,
+      "line_spacing": 0,
+      "position_x": 0,
+      "position_y": 0,
+      "rotation_angle": 0,
+      "rotation_options": "text center",
+      "font_color_hex": "#ffffff",
+      "image": [
+        "1885",
+        0
+      ]
+    },
+    "class_type": "CR Overlay Text",
+    "_meta": {
+      "title": "🔤 CR Overlay Text"
+    }
+  },
+  "1890": {
+    "inputs": {
+      "delimiter": ", ",
+      "clean_whitespace": "true",
+      "text_a": [
+        "1883",
+        0
+      ],
+      "text_b": [
+        "1882",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "1891": {
+    "inputs": {
+      "value_if_true": 1,
+      "value_if_false": 2,
+      "boolean": [
+        "1885",
+        1
+      ]
+    },
+    "class_type": "CR Set Value On Boolean",
+    "_meta": {
+      "title": "⚙️ CR Set Value On Boolean"
+    }
+  },
+  "1894": {
+    "inputs": {
+      "seed": 87296057834033
+    },
+    "class_type": "Seed",
+    "_meta": {
+      "title": "$map:{\"seed\":\"faceDetailerSeed\"}"
+    }
+  },
+  "1898": {
+    "inputs": {
+      "clip_l": [
+        "1883",
+        0
+      ],
+      "t5xxl": [
+        "1883",
+        0
+      ],
+      "guidance": 2.5,
+      "clip": [
+        "1829",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "1899": {
+    "inputs": {
+      "guide_size": 384,
+      "guide_size_for": true,
+      "max_size": 1024,
+      "seed": [
+        "1894",
+        3
+      ],
+      "steps": [
+        "1873",
+        2
+      ],
+      "cfg": [
+        "2004",
+        0
+      ],
+      "sampler_name": "deis",
+      "scheduler": "sgm_uniform",
+      "denoise": 0.25,
+      "feather": 5,
+      "noise_mask": true,
+      "force_inpaint": true,
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 10,
+      "bbox_crop_factor": 3,
+      "sam_detection_hint": "center-1",
+      "sam_dilation": 0,
+      "sam_threshold": 0.93,
+      "sam_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.7,
+      "sam_mask_hint_use_negative": "False",
+      "drop_size": 10,
+      "wildcard": "",
+      "cycle": 1,
+      "inpaint_model": false,
+      "noise_mask_feather": 0,
+      "tiled_encode": false,
+      "tiled_decode": false,
+      "image": [
+        "1944",
+        0
+      ],
+      "model": [
+        "1999",
+        0
+      ],
+      "clip": [
+        "1827",
+        1
+      ],
+      "vae": [
+        "1847",
+        0
+      ],
+      "positive": [
+        "1898",
+        0
+      ],
+      "negative": [
+        "1945",
+        0
+      ],
+      "bbox_detector": [
+        "1951",
+        0
+      ],
+      "sam_model_opt": [
+        "1900",
+        0
+      ]
+    },
+    "class_type": "FaceDetailer",
+    "_meta": {
+      "title": "$map:{\"sampler_name\":\"sampler.name\", \"denoise\":\"facedetailer.denoise\"}"
+    }
+  },
+  "1900": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "Prefer GPU"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "1903": {
+    "inputs": {
+      "width_factor": 2,
+      "height_factor": 3,
+      "overlap_rate": 0.05,
+      "image": [
+        "1950",
+        0
+      ]
+    },
+    "class_type": "TTP_Tile_image_size",
+    "_meta": {
+      "title": "TTP_Tile_image_size"
+    }
+  },
+  "1904": {
+    "inputs": {
+      "pixels": [
+        "2002",
+        0
+      ],
+      "vae": [
+        "1847",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "1906": {
+    "inputs": {
+      "text_input": "",
+      "task": "detailed_caption",
+      "fill_mask": true,
+      "keep_model_loaded": false,
+      "max_new_tokens": 1024,
+      "num_beams": 3,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": 926827546571229,
+      "image": [
+        "2002",
+        0
+      ],
+      "florence2_model": [
+        "2001",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "1907": {
+    "inputs": {
+      "prompt": "esk"
+    },
+    "class_type": "CR Prompt Text",
+    "_meta": {
+      "title": "⚙️ CR Prompt Text"
+    }
+  },
+  "1908": {
+    "inputs": {
+      "delimiter": ", ",
+      "clean_whitespace": "true",
+      "text_a": [
+        "1906",
+        2
+      ],
+      "text_b": [
+        "1907",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "1909": {
+    "inputs": {
+      "guidance": 2.5,
+      "conditioning": [
+        "1926",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "1910": {
+    "inputs": {
+      "noise": [
+        "1964",
+        0
+      ],
+      "guider": [
+        "1953",
+        0
+      ],
+      "sampler": [
+        "1930",
+        0
+      ],
+      "sigmas": [
+        "1954",
+        0
+      ],
+      "latent_image": [
+        "1904",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "1911": {
+    "inputs": {
+      "upscale_model": [
+        "364",
+        0
+      ],
+      "image": [
+        "2028",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "1913": {
+    "inputs": {
+      "strength": 1,
+      "conditioning_batch": [
+        "1914",
+        0
+      ],
+      "coordinates": [
+        "1922",
+        0
+      ]
+    },
+    "class_type": "TTP_condsetarea_merge",
+    "_meta": {
+      "title": "TTP_condsetarea_merge"
+    }
+  },
+  "1914": {
+    "inputs": {
+      "conditionings": [
+        "1926",
+        0
+      ]
+    },
+    "class_type": "TTP_condtobatch",
+    "_meta": {
+      "title": "TTP_cond to batch"
+    }
+  },
+  "1922": {
+    "inputs": {
+      "Positions": [
+        "1925",
+        1
+      ]
+    },
+    "class_type": "TTP_CoordinateSplitter",
+    "_meta": {
+      "title": "TTP_CoordinateSplitter"
+    }
+  },
+  "1925": {
+    "inputs": {
+      "tile_width": [
+        "1903",
+        0
+      ],
+      "tile_height": [
+        "1903",
+        1
+      ],
+      "image": [
+        "1950",
+        0
+      ]
+    },
+    "class_type": "TTP_Image_Tile_Batch",
+    "_meta": {
+      "title": "TTP_Image_Tile_Batch"
+    }
+  },
+  "1926": {
+    "inputs": {
+      "text": [
+        "1908",
+        0
+      ],
+      "clip": [
+        "1827",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "1928": {
+    "inputs": {
+      "amount": 0.15,
+      "image": [
+        "1990",
+        7
+      ]
+    },
+    "class_type": "ImageCASharpening+",
+    "_meta": {
+      "title": "🔧 Image Contrast Adaptive Sharpening"
+    }
+  },
+  "1929": {
+    "inputs": {
+      "tile_size": 1024,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "1910",
+        0
+      ],
+      "vae": [
+        "1847",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE Decode (Tiled)"
+    }
+  },
+  "1930": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "$map:{\"sampler_name\":\"sampler.name\"}"
+    }
+  },
+  "1932": {
+    "inputs": {
+      "clip_l": [
+        "1890",
+        0
+      ],
+      "t5xxl": [
+        "1890",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "1827",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "$map:{\"guidance\":\"guidance\"}"
+    }
+  },
+  "1933": {
+    "inputs": {
+      "filename_prefix": "flux_upscaler",
+      "images": [
+        "2029",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "output_to_save"
+    }
+  },
+  "1934": {
+    "inputs": {
+      "pixels": [
+        "1957",
+        0
+      ],
+      "vae": [
+        "1847",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "1944": {
+    "inputs": {
+      "samples": [
+        "1961",
+        6
+      ],
+      "vae": [
+        "1961",
+        3
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "1945": {
+    "inputs": {
+      "conditioning": [
+        "1947",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "ConditioningZeroOut"
+    }
+  },
+  "1946": {
+    "inputs": {
+      "conditioning_to": [
+        "1932",
+        0
+      ],
+      "conditioning_from": [
+        "1913",
+        0
+      ]
+    },
+    "class_type": "ConditioningConcat",
+    "_meta": {
+      "title": "Conditioning (Concat)"
+    }
+  },
+  "1947": {
+    "inputs": {
+      "text": [
+        "1881",
+        0
+      ],
+      "clip": [
+        "1827",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "1950": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "megapixels": 8,
+      "image": [
+        "1911",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "Scale Image to Total Pixels"
+    }
+  },
+  "1951": {
+    "inputs": {
+      "model_name": "bbox/face_yolov8m.pt"
+    },
+    "class_type": "UltralyticsDetectorProvider",
+    "_meta": {
+      "title": "UltralyticsDetectorProvider"
+    }
+  },
+  "1953": {
+    "inputs": {
+      "model": [
+        "1828",
+        0
+      ],
+      "conditioning": [
+        "1909",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "1954": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 10,
+      "denoise": [
+        "2005",
+        0
+      ],
+      "model": [
+        "1828",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "$map:{\"scheduler\": \"scheduler\"}"
+    }
+  },
+  "1957": {
+    "inputs": {
+      "noise_radius": 2,
+      "preserve_edges": 0.75,
+      "sharpen": 3,
+      "ratio": 0.5,
+      "image": [
+        "2017",
+        0
+      ]
+    },
+    "class_type": "ImageSmartSharpen+",
+    "_meta": {
+      "title": "🔧 Image Smart Sharpen"
+    }
+  },
+  "1961": {
+    "inputs": {
+      "model": [
+        "1828",
+        0
+      ],
+      "clip": [
+        "1827",
+        1
+      ],
+      "vae": [
+        "1847",
+        0
+      ],
+      "positive": [
+        "1946",
+        0
+      ],
+      "negative": [
+        "1945",
+        0
+      ],
+      "latent": [
+        "1934",
+        0
+      ]
+    },
+    "class_type": "Context Big (rgthree)",
+    "_meta": {
+      "title": "Context Big (rgthree)"
+    }
+  },
+  "1964": {
+    "inputs": {
+      "noise_seed": [
+        "1884",
+        3
+      ]
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "1980": {
+    "inputs": {
+      "image": "NanoBanana_50468262_330_100_ZA_B2C_SHO_02-valid_until_209972_6923.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "load_image_input"
+    }
+  },
+  "1988": {
+    "inputs": {
+      "images": [
+        "1899",
+        0
+      ]
+    },
+    "class_type": "Context (rgthree)",
+    "_meta": {
+      "title": "Context (rgthree)"
+    }
+  },
+  "1989": {
+    "inputs": {
+      "images": [
+        "1944",
+        0
+      ]
+    },
+    "class_type": "Context (rgthree)",
+    "_meta": {
+      "title": "Context (rgthree)"
+    }
+  },
+  "1990": {
+    "inputs": {
+      "base_ctx": [
+        "1704",
+        0
+      ]
+    },
+    "class_type": "Context (rgthree)",
+    "_meta": {
+      "title": "Context (rgthree)"
+    }
+  },
+  "1999": {
+    "inputs": {
+      "switch": "On",
+      "lora_name": "None",
+      "strength_model": [
+        "2009",
+        0
+      ],
+      "strength_clip": [
+        "2010",
+        0
+      ],
+      "model": [
+        "1840",
+        0
+      ],
+      "clip": [
+        "1851",
+        0
+      ]
+    },
+    "class_type": "CR Load LoRA",
+    "_meta": {
+      "title": "$map:{\"lora_name\":\"customLora.id\",\"switch\": \"customLora.enabled\"}"
+    }
+  },
+  "2001": {
+    "inputs": {
+      "model": "Florence-2-large",
+      "precision": "fp16",
+      "attention": "sdpa",
+      "convert_to_safetensors": false
+    },
+    "class_type": "Florence2ModelLoader",
+    "_meta": {
+      "title": "Florence2ModelLoader"
+    }
+  },
+  "2002": {
+    "inputs": {
+      "image": [
+        "1925",
+        0
+      ]
+    },
+    "class_type": "ImpactImageBatchToImageList",
+    "_meta": {
+      "title": "Image Batch to Image List"
+    }
+  },
+  "2004": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "ImpactFloat",
+    "_meta": {
+      "title": "$map:{\"value\":\"cfgScale\"}"
+    }
+  },
+  "2005": {
+    "inputs": {
+      "value": 0.2
+    },
+    "class_type": "ImpactFloat",
+    "_meta": {
+      "title": "$map:{\"value\": \"denoisingStrength\"}"
+    }
+  },
+  "2006": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "ImpactFloat",
+    "_meta": {
+      "title": "$map:{\"value\": \"upscaleBy\"}"
+    }
+  },
+  "2007": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "ImpactFloat",
+    "_meta": {
+      "title": "$map:{\"value\": \"customLora.UNETStrength\"}"
+    }
+  },
+  "2008": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "ImpactFloat",
+    "_meta": {
+      "title": "$map:{\"value\": \"customLora.TEStrength\"}"
+    }
+  },
+  "2009": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "ImpactFloat",
+    "_meta": {
+      "title": "$map:{\"value\": \"customLora.UNETStrength\"}"
+    }
+  },
+  "2010": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "ImpactFloat",
+    "_meta": {
+      "title": "$map:{\"value\": \"customLora.TEStrength\"}"
+    }
+  },
+  "2017": {
+    "inputs": {
+      "padding": 64,
+      "tiles": [
+        "2021",
+        0
+      ],
+      "positions": [
+        "1925",
+        1
+      ],
+      "original_size": [
+        "1925",
+        2
+      ],
+      "grid_size": [
+        "1925",
+        3
+      ]
+    },
+    "class_type": "TTP_Image_Assy",
+    "_meta": {
+      "title": "TTP_Image_Assy"
+    }
+  },
+  "2021": {
+    "inputs": {
+      "images": [
+        "1929",
+        0
+      ]
+    },
+    "class_type": "ImageListToImageBatch",
+    "_meta": {
+      "title": "Image List to Image Batch"
+    }
+  },
+  "2023": {
+    "inputs": {
+      "width": 1122,
+      "height": 1536,
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "1980",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "2024": {
+    "inputs": {
+      "prompt": "clothing",
+      "threshold": 0.2,
+      "sam_model": [
+        "2026",
+        0
+      ],
+      "grounding_dino_model": [
+        "2027",
+        0
+      ],
+      "image": [
+        "2023",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "2026": {
+    "inputs": {
+      "model_name": "sam_vit_h (2.56GB)"
+    },
+    "class_type": "SAMModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAMModelLoader (segment anything)"
+    }
+  },
+  "2027": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinT_OGC (694MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "2028": {
+    "inputs": {
+      "mode": "resize_image",
+      "top_padding": 240,
+      "bottom_padding": 240,
+      "left_padding": 240,
+      "right_padding": 240,
+      "rgb_color": "248,243,237",
+      "horizontal_align": "center",
+      "vertical_align": "center",
+      "width": 1122,
+      "height": 1536,
+      "image": [
+        "2024",
+        0
+      ],
+      "mask": [
+        "2024",
+        1
+      ]
+    },
+    "class_type": "PadImageByMask",
+    "_meta": {
+      "title": "Pad Image By Mask"
+    }
+  },
+  "2029": {
+    "inputs": {
+      "width": 2244,
+      "height": 3072,
+      "interpolation": "lanczos",
+      "method": "fill / crop",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "1886",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  }
+}
