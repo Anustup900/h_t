@@ -6,12 +6,12 @@ from comfy_api_simplified import ComfyApiWrapper, ComfyWorkflowWrapper
 # ========================
 # CONFIG
 # ========================
-INPUT_FOLDER = "NB"      # folder with input images
+INPUT_FOLDER = "NB"         # folder with input images
 OUTPUT_FOLDER = "output"    # folder to save results
 WORKFLOW_JSON = "final_v4_hb_api.json"
 COMFY_API_URL = "http://0.0.0.0:7860/"
 LOAD_NODE_NAME = "load_image_input"      # name of the image load node
-OUTPUT_NODE_NAME = "output_to_save"    # name of the output node
+OUTPUT_NODE_NAME = "output_to_save"      # name of the output node
 # ========================
 
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
@@ -32,23 +32,35 @@ if not image_files:
 
 # Process each image one by one
 for image_name in sorted(image_files):
+    base_name = os.path.splitext(image_name)[0]
+
+    # ✅ Check if this image was already processed
+    already_done = any(f.startswith(base_name + "_") for f in os.listdir(OUTPUT_FOLDER))
+    if already_done:
+        print(f"⏭️ Skipping (already processed): {image_name}")
+        continue
+
     input_path = os.path.join(INPUT_FOLDER, image_name)
     print(f"🔹 Processing: {image_name}")
 
-    # Upload image to Comfy server
-    image_metadata = api.upload_image(input_path)
+    try:
+        # Upload image to Comfy server
+        image_metadata = api.upload_image(input_path)
 
-    # Set uploaded image as input to workflow
-    wf.set_node_param(LOAD_NODE_NAME, "image", f"{image_metadata['subfolder']}/{image_metadata['name']}")
+        # Set uploaded image as input to workflow
+        wf.set_node_param(LOAD_NODE_NAME, "image", f"{image_metadata['subfolder']}/{image_metadata['name']}")
 
-    # Run the workflow
-    results = api.queue_and_wait_images(wf, output_node_title=OUTPUT_NODE_NAME)
+        # Run the workflow
+        results = api.queue_and_wait_images(wf, output_node_title=OUTPUT_NODE_NAME)
 
-    # Save outputs
-    for filename, image_data in results.items():
-        output_path = os.path.join(OUTPUT_FOLDER, f"{os.path.splitext(image_name)[0]}_{filename}")
-        with open(output_path, "wb+") as f:
-            f.write(image_data)
-        print(f"✅ Saved: {output_path}")
+        # Save outputs
+        for filename, image_data in results.items():
+            output_path = os.path.join(OUTPUT_FOLDER, f"{base_name}_{filename}")
+            with open(output_path, "wb+") as f:
+                f.write(image_data)
+            print(f"✅ Saved: {output_path}")
 
-print("🎉 All images processed successfully!")
+    except Exception as e:
+        print(f"❌ Error processing {image_name}: {e}")
+
+print("🎉 All images processed successfully (skipping completed ones)!")
