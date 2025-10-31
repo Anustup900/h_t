@@ -8,7 +8,7 @@ from comfy_api_simplified import ComfyApiWrapper, ComfyWorkflowWrapper
 # ========================
 INPUT_FOLDER = "NB"      # folder with input images
 OUTPUT_FOLDER = "output"    # folder to save results
-WORKFLOW_JSON = "HB_upscaler_final_v3_api.json"
+WORKFLOW_JSON = "final_v4_hb_api.json"
 COMFY_API_URL = "http://0.0.0.0:7860/"
 LOAD_NODE_NAME = "load_image_input"      # name of the image load node
 OUTPUT_NODE_NAME = "output_to_save"    # name of the output node
