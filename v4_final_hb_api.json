@@ -1555,7 +1555,7 @@
     "inputs": {
       "sam_model": "sam_vit_h (2.56GB)",
       "grounding_dino_model": "GroundingDINO_SwinT_OGC (694MB)",
-      "threshold": 0.2,
+      "threshold": 0.1,
       "detail_method": "VITMatte",
       "detail_erode": 6,
       "detail_dilate": 6,
