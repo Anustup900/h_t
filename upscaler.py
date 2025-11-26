@@ -6,8 +6,8 @@ from comfy_api_simplified import ComfyApiWrapper, ComfyWorkflowWrapper
 # ========================
 # CONFIG
 # ========================
-INPUT_FOLDER = "final_redo"          # folder with input subfolders
-OUTPUT_FOLDER = "redo_folder"          # base folder for output results
+INPUT_FOLDER = "batch_second_HB"          # folder with input subfolders
+OUTPUT_FOLDER = "batch_2_up"          # base folder for output results
 WORKFLOW_JSON = "v4_final_hb_api.json"
 COMFY_API_URL = "http://0.0.0.0:7860/"
 LOAD_NODE_NAME = "load_image_input"  # name of the image load node
